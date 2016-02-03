@@ -48,33 +48,35 @@
         </tr>
         
         <!-- Newly added table -->
-  			 <?php foreach ($categories as $category) : ?>
-            <tr>                
-                <td><?php echo $category['categoryName']; ?></td>
-              
-                <td><form action="add_category.php" method="post">
-                    <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
-                    <input type="hidden" name="category_id"
-                           value="<?php echo $product['categoryID']; ?>">
-                    <input type="submit" value="Delete">
-                </form></td>
-            </tr>
-            <?php endforeach; ?>  
-                             
+		<?php foreach ($categories as $category) : ?>
+		<tr>                
+			<td><?php echo $category['categoryName']; ?></td>
+		  
+			<td><form action="delete_category.php" method="post">
+				<input type="hidden" name="product_id"
+					   value="<?php echo $product['productID']; ?>">
+				<input type="hidden" name="category_id"
+					   value="<?php echo $product['categoryID']; ?>">
+				<input type="submit" value="Delete">
+			</form></td>
+		</tr>
+		<?php endforeach; ?>  
+						 
         <!-- Newly added tabe -->        
     
     </table>
 
     <h2>Add Category</h2>
     
-    <!-- Newly added form code -->    
-    <label>Name:</label>
-    <input type="text" name="price">
-
-    <label>&nbsp;</label>
-    <input type="submit" value="Add"><br>        
-    <!-- Newly added form code -->    
+    <!-- Newly added form code -->   
+    <form action="add_category.php" method="post" id="add_category"> 
+	    <label>Name:</label>
+	    <input type="text" name="price">
+	
+	    <label>&nbsp;</label>
+	    <input type="submit" value="Add"><br>          
+    </form>
+    <!-- Newly added form code -->  
     
     <br>
     <p><a href="index.php">List Products</a></p>

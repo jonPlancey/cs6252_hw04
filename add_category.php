@@ -1,4 +1,11 @@
 <?php
+
+
+	echo "hlep";
+
+
+/*
+
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $code = filter_input(INPUT_POST, 'code');
@@ -28,5 +35,10 @@ if ($category_id == null || $category_id == false ||
 
     // Display the Product List page
     include('category_list.php');
+    
+    */
+    
+    
+    
 }
 ?>
