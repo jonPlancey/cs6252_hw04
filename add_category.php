@@ -10,10 +10,9 @@
 	} else {
 		require_once('database.php');
 
-		// Add the product to the database  
 		$query = 'INSERT 
 				  INTO 
-				 	products (categoryName)
+				 	categories (categoryName)
 				  VALUES (:category_name)';
 		
 		$statement = $db->prepare($query);
