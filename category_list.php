@@ -47,12 +47,12 @@
             <th>&nbsp;</th>
         </tr>
         
-        <!-- Newly added tabe -->
+        <!-- Newly added table -->
   			 <?php foreach ($categories as $category) : ?>
             <tr>                
                 <td><?php echo $category['categoryName']; ?></td>
               
-                <td><form action="delete_product.php" method="post">
+                <td><form action="add_category.php" method="post">
                     <input type="hidden" name="product_id"
                            value="<?php echo $product['productID']; ?>">
                     <input type="hidden" name="category_id"
