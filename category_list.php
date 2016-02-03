@@ -3,8 +3,7 @@
 
 	// Get category ID
 	if (!isset($category_id)) {
-		$category_id = filter_input(INPUT_GET, 'category_id',
-				FILTER_VALIDATE_INT);
+		$category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
 		if ($category_id == NULL || $category_id == FALSE) {
 			$category_id = 1;
 		}
@@ -12,16 +11,14 @@
 	
 	
 	// Get all categories
-	$query = 'SELECT * FROM categories
-	                       ORDER BY categoryID';
+ 	$query = 'SELECT * FROM categories ORDER BY categoryID';
 	$statement = $db->prepare($query);
-	$statement->execute();
-	$categories = $statement->fetchAll();
-	$statement->closeCursor();
-	
+ 	$statement->execute();
+ 	$categories = $statement->fetchAll();
+ 	$statement->closeCursor();
+
 
 ?>
-
 
 
 
@@ -39,6 +36,10 @@
 <!-- the body section -->
 <body>
 <header><h1>Product Manager</h1></header>
+
+
+
+
 <main>
     <h1>Category List</h1>
     <table>
@@ -48,18 +49,17 @@
         </tr>
         
         <!-- Newly added table -->
+        
 		<?php foreach ($categories as $category) : ?>
 		<tr>                
 			<td><?php echo $category['categoryName']; ?></td>
 		  
 			<td><form action="delete_category.php" method="post">
-				<input type="hidden" name="product_id"
-					   value="<?php echo $product['productID']; ?>">
-				<input type="hidden" name="category_id"
-					   value="<?php echo $product['categoryID']; ?>">
+				<input type="hidden" name="category_id"  value="<?php echo $categories['categoryID']; ?>">						 	
 				<input type="submit" value="Delete">
 			</form></td>
 		</tr>
+				
 		<?php endforeach; ?>  
 						 
         <!-- Newly added tabe -->        
