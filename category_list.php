@@ -60,7 +60,8 @@
                     <input type="submit" value="Delete">
                 </form></td>
             </tr>
-            <?php endforeach; ?>                   
+            <?php endforeach; ?>  
+                             
         <!-- Newly added tabe -->        
     
     </table>
