@@ -69,9 +69,9 @@
     <h2>Add Category</h2>
     
     <!-- Newly added form code -->   
-    <form action="add_category.php" method="post" id="add_category"> 
+    <form action="add_category.php" method="post"> 
 	    <label>Name:</label>
-	    <input type="text" name="price">
+	    <input type="text" name="category_name">
 	
 	    <label>&nbsp;</label>
 	    <input type="submit" value="Add"><br>          
