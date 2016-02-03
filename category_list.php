@@ -1,14 +1,32 @@
 <?php
-require_once('database.php');
+	require_once('database.php');
 
-// Get all categories
-$query = 'SELECT * FROM categories
-                       ORDER BY categoryID';
-$statement = $db->prepare($query);
-$statement->execute();
-$categories = $statement->fetchAll();
-$statement->closeCursor();
+	// Get category ID
+	if (!isset($category_id)) {
+		$category_id = filter_input(INPUT_GET, 'category_id',
+				FILTER_VALIDATE_INT);
+		if ($category_id == NULL || $category_id == FALSE) {
+			$category_id = 1;
+		}
+	}	
+	
+	
+	// Get all categories
+	$query = 'SELECT * FROM categories
+	                       ORDER BY categoryID';
+	$statement = $db->prepare($query);
+	$statement->execute();
+	$categories = $statement->fetchAll();
+	$statement->closeCursor();
+	
+
 ?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -30,10 +48,10 @@ $statement->closeCursor();
         </tr>
         
         <!-- Newly added tabe -->
-  			 <?php foreach ($products as $product) : ?>
-            <tr>
-                <td><?php echo $product['productCode']; ?></td>
-                <td class="right"><?php echo $product['listPrice']; ?></td>
+  			 <?php foreach ($categories as $category) : ?>
+            <tr>                
+                <td><?php echo $category['categoryName']; ?></td>
+              
                 <td><form action="delete_product.php" method="post">
                     <input type="hidden" name="product_id"
                            value="<?php echo $product['productID']; ?>">
@@ -42,7 +60,7 @@ $statement->closeCursor();
                     <input type="submit" value="Delete">
                 </form></td>
             </tr>
-            <?php endforeach; ?>        
+            <?php endforeach; ?>                   
         <!-- Newly added tabe -->        
     
     </table>
