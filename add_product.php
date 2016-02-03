@@ -5,7 +5,7 @@
 	$name = filter_input(INPUT_POST, 'name');
 	$price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
-	/*
+	
 	// Validate inputs
 	if ($category_id == null || $category_id == false ||
 			$code == null || $name == null || $price == null || $price == false) {
@@ -26,7 +26,7 @@
 		$statement->bindValue(':price', $price);
 		$statement->execute();
 		$statement->closeCursor();
-		/*
+		
 
 		// Display the Product List page
 		include('index.php');
