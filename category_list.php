@@ -37,6 +37,16 @@ $statement->closeCursor();
     
     <!-- add code for the form here -->
     
+    
+    <label>List Price:</label>
+    <input type="text" name="price"><br>
+
+    <label>&nbsp;</label>
+    <input type="submit" value="Add Product"><br>
+    
+    
+    <!-- add code for the form here -->    
+    
     <br>
     <p><a href="index.php">List Products</a></p>
 
